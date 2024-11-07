@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins";
+}
+
+#container {
+    display: flex;
+    min-height: 100vh;
+    background-color: rgba(68, 117, 136, 0.548);
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+#PageTitle {
+    margin-left: 10px;
+    padding: 10px;
+}
+
+.card {
+    background-color: white;
+    width: 300px;
+    height: 600px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: transform .1s;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-30px);
+}
+
+.card:hover .coeur {
+    left:0;
+    opacity: 1;
+}
+
+.card:hover .card-header img {
+    transform: scale(1.1);
+}
+
+.card-header {
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-header img {
+    height: 200px;
+    width: 300px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    filter:grayscale(90%);
+    transition: 0.5s;
+}
+
+.card-header img:hover {
+    filter: none;
+}
+
+.card-text {
+    padding: 30px;
+}
+
+.card-text h1 {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.card-text p {
+    font-size: 14px;
+}
+
+.coeur {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 10px;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(237, 53, 96);
+    font-size: 20px;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: -50px;
+    transition: 0.5s;
+}
+
+
+/***************RESPONSIVE****************/
+
+@media (max-width: 1040px) {
+    #container {
+        display: flex;
+        flex-wrap: wrap; /* Permet aux éléments de se placer sur plusieurs lignes */
+        justify-content: center; 
+        align-items: center; 
+        gap: 0;
+    }
+
+    .card {
+        flex: 1 1 calc(50% - 0px); /* Chaque carte occupe 50% de la largeur du conteneur sans espacement */
+        height: auto;
+        margin: 50px;
+    }
+
+    .card-header img {
+        width:100%;
+        object-fit: cover;
+    }
+
+}
